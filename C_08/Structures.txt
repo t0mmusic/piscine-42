@@ -1,0 +1,4 @@
+https://www.programiz.com/c-programming/c-structures
+https://www.programiz.com/c-programming/c-structures-pointers
+
+point->x is equivalent to (*point).x
