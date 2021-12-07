@@ -1,0 +1,5 @@
+Credentials cache: API:67BC7027-63CB-4802-97F7-7CE669CDE3D7
+        Principal: jbrown@42ADEL.ORG.AU
+
+  Issued                Expires               Principal
+Nov 23 10:47:51 2021  Nov 23 20:47:51 2021  krbtgt/42ADEL.ORG.AU@42ADEL.ORG.AU
