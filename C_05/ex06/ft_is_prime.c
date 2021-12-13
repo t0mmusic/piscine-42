@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:27:40 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/06 16:20:16 by jbrown           ###   ########.fr       */
+/*   Updated: 2021/12/08 13:55:26 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int	ft_is_prime(int nb)
 {
-	int n;
+	int	i;
 
-	n = 2;
+	i = 2;
 	if (nb == 0 || nb == 1)
 		return (0);
-	while (n < 46341 && n <= nb / 2)
+	while (i <= nb / 2)
 	{
-		if (nb % n == 0)
+		if (nb % i == 0)
 		{
 			return (0);
 		}
-		n++;
+		i++;
 	}
 	return (1);
 }
-
+/*
 int	main(void)
 {
-	printf("%d", ft_is_prime(4));
+	printf("%d", ft_is_prime(7));
 	return (0);
-}
+}*/

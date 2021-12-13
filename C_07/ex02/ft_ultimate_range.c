@@ -1,47 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 09:02:52 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/09 17:24:48 by jbrown           ###   ########.fr       */
+/*   Created: 2021/12/09 10:04:35 by jbrown            #+#    #+#             */
+/*   Updated: 2021/12/13 18:00:15 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_ultimate_range(int **range, int min, int max)
 {
+	int	r;
 	int	i;
 
-	i = 0;
-	while (src[i] != '\0')
+	if (min >= max)
 	{
-		dest[i] = src[i];
-		i++;
+		*range = NULL;
+		return (0);
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dest;
-
-	dest = malloc(sizeof (src));
-	ft_strcpy(dest, src);
-	return (dest);
+	r = max - min;
+	*range = (int *) malloc(sizeof(r) * r);
+	if (*range == NULL)
+		return (-1);
+	i = 0;
+	while (min < max)
+		(*range)[i++] = min++;
+	return (r);
 }
 /*
 int	main(void)
 {
-	char	str[] = "hello world";
+	int	i;
+	int	**str;
 
-	printf("%s\n", str);
-	printf("%lu\n", sizeof (str));
-	printf("%s", ft_strdup(str));
+	i = 0;
+	printf("%d numbers:\n", ft_ultimate_range(str, 15, 20));
+	while (str[0][i])
+		printf("%d\n", (*str)[i++]);
 	return (0);
 }*/

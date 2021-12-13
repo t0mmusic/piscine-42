@@ -6,21 +6,24 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 16:21:43 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/06 16:28:15 by jbrown           ###   ########.fr       */
+/*   Updated: 2021/12/08 12:13:36 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int arg, char **str)
+int	main(int argc, char **argv)
 {
 	int	i;
 
 	i = 0;
-	while (str[0][i] != '\0')
+	if (argc < 1)
+		return (0);
+	while (argv[0][i] != '\0')
 	{
-		write(1, &str[0][i], 1);
+		write(1, &argv[0][i], 1);
 		i++;
 	}
+	write(1, "\n", 1);
 	return (0);
 }

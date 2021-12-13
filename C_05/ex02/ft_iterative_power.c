@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:40:14 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/06 13:47:33 by jbrown           ###   ########.fr       */
+/*   Updated: 2021/12/08 10:08:08 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (nb);
 }
-
+/*
 int	main(void)
 {
 	int	i;
 
-	i = 10;
-	printf("%d\n", ft_iterative_power(i, 0));
+	i = 6;
+	printf("%d\n", ft_iterative_power(i, 2));
 	return (0);
-}
+}*/

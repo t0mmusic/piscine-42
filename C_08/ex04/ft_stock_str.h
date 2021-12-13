@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 14:14:02 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/08 10:08:50 by jbrown           ###   ########.fr       */
+/*   Created: 2021/12/12 11:23:58 by jbrown            #+#    #+#             */
+/*   Updated: 2021/12/12 11:59:43 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-int	ft_fibonacci(int index)
+# include <unistd.h>
+
+typedef struct s_stock_str
 {
-	if (index < 0)
-		return (-1);
-	if (index == 0)
-		return (index);
-	if (index == 1)
-		return (index);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-}
-/*
-int	main(void)
-{
-	printf("%d", ft_fibonacci(2));
-	return (0);
-}*/
+	int		size;
+	char	*str;
+	char	*copy;
+}	t_stock_str;
+
+#endif
