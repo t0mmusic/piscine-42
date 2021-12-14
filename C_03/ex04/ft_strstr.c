@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 13:01:47 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/13 13:07:51 by jbrown           ###   ########.fr       */
+/*   Created: 2021/12/13 13:13:10 by jbrown            #+#    #+#             */
+/*   Updated: 2021/12/13 13:59:34 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = 0;
-	while (dest[i])
+	if (to_find[i] == 0)
+		return (str);
+	while (str[i])
+	{
+		j = 0;
+		while (str[i + j] == to_find[j] && to_find[j])
+		{
+			if (to_find[j + 1] == '\0')
+				return (&str[i]);
+			j++;
+		}
 		i++;
-	while (src[j])
-		dest[i++] = src[j++];
-	dest[i] = '\0';
-	return (dest);
+	}
+	return (0);
 }
 /*
 int	main(int argc, char **argv)
 {
-	char	str[100];
-
-	ft_strcat(str, argv[1]);
-	ft_strcat(str, argv[2]);
-	printf("%s", str);
+	printf("%s\n", ft_strstr(argv[1], argv[2]));
 	return (0);
 }*/
