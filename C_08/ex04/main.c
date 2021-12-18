@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:52:45 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/13 20:37:46 by jbrown           ###   ########.fr       */
+/*   Updated: 2021/12/18 11:19:01 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av);
 
 int	main(int argc, char **argv)
 {
-	int	i;
 	t_stock_str *num = ft_strs_to_tab(argc, argv);
 	ft_show_tab(num);
 	return (0);

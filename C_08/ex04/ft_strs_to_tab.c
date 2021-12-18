@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 13:13:49 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/13 20:03:50 by jbrown           ###   ########.fr       */
+/*   Updated: 2021/12/18 11:30:30 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,25 @@ int	ft_strlen(char *str)
 	int		length;
 
 	length = 0;
-	while (str[length] != '\0')
+	while (str[length])
 		length++;
 	return (length);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strdup(char *str)
 {
-	int	i;
+	char	*str_cpy;
+	int		i;
 
+	str_cpy = malloc(sizeof(*str) * (ft_strlen(str) + 1));
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i])
 	{
-		dest[i] = src[i];
+		str_cpy[i] = str[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dest;
-
-	dest = malloc(sizeof (src));
-	ft_strcpy(dest, src);
-	return (dest);
+	str_cpy[i] = '\0';
+	return (str_cpy);
 }
 
 struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
@@ -51,19 +44,17 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	t_stock_str	*stock;
 	int			i;
 
-	stock = malloc((ac + 1) * sizeof(t_stock_str));
-	if (stock == 0)
-		return (0);
+	stock = malloc((ac + 1) * sizeof(*stock));
+	if (stock == NULL)
+		return (stock);
 	i = 0;
 	while (i < ac)
 	{
 		stock[i].size = ft_strlen(av[i]);
 		stock[i].str = av[i];
-		stock[i].copy = ft_strdup(stock[i].str);
+		stock[i].copy = ft_strdup(av[i]);
 		i++;
 	}
-	stock[i].size = 0;
-	stock[i].str = 0;
-	stock[i].copy = 0;
+	stock[i].str = NULL;
 	return (stock);
 }
