@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 12:18:17 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/01 10:35:49 by jbrown           ###   ########.fr       */
+/*   Updated: 2021/12/18 13:03:34 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_putstr(char *str)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	while (str[length] != '\0')
-		length++;
-	write(1, str, length);
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
 /*
 int	main(void)

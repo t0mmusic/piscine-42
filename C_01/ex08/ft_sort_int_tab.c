@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 14:18:54 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/18 12:56:33 by jbrown           ###   ########.fr       */
+/*   Created: 2021/12/05 13:05:21 by jbrown            #+#    #+#             */
+/*   Updated: 2021/12/18 12:59:43 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	temp;
-	int	i;
+	int	count;
 
-	i = 0;
-	while (i < size / 2)
+	count = 0;
+	while (count < size - 1)
 	{
-		temp = tab[i];
-		tab[i] = tab[size - 1 - i];
-		tab[size - 1 - i] = temp;
-		i++;
+		if (tab[count] > tab[count + 1])
+		{
+			temp = tab[count];
+			tab[count] = tab[count + 1];
+			tab[count + 1] = temp;
+			count = -1;
+		}
+		count++;
 	}
 }
 /*
 int	main(void)
 {
-	int array[] = {0,1,2,3,4,5,6,7,8,9};
-	int	length;
-	int	i;
+	int str[] = {1,7,6,288,9,4,3,0,2,1,8};
 
-	length = 10;
-	i = 0;
-	while (i < 10)
-		printf("%d", array[i++]);
+	for (int i = 0; i < 11; i++)
+		printf("%d ,", str[i]);
 	printf("\n");
-	ft_rev_int_tab(array, length);
-	i = 0;
-	while (i < 10)
-		printf("%d", array[i++]);
+	ft_sort_int_tab(str, 11);
+	for (int i = 0; i < 11; i++)		
+		printf("%d ,", str[i]);
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:13:10 by jbrown            #+#    #+#             */
-/*   Updated: 2021/12/13 13:59:34 by jbrown           ###   ########.fr       */
+/*   Updated: 2021/12/18 12:33:00 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strstr(char *str, char *to_find)
 	int	j;
 
 	i = 0;
-	if (to_find[i] == 0)
+	if (to_find[i] == '\0')
 		return (str);
 	while (str[i])
 	{
